@@ -11,6 +11,8 @@ from sklearn.manifold import TSNE
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
+num_rows = 500 # Linhas do dataset: alterar conforme necessidade de rapidez (máximo: 73104)
+
 df = pd.read_csv('gutenberg_book_deer.csv')
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -36,7 +38,6 @@ def get_embeddings(texts, batch_size=32, num_rows=None):
         
     return np.vstack(embeddings_list)
 
-num_rows = 500 
 embeddings = get_embeddings(df['TitleSubject'], batch_size=32, num_rows=num_rows)
 print(f"Shape of embeddings: {embeddings.shape}")
 
