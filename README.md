@@ -43,7 +43,7 @@ pip install -r requirements.txt
 python3 scraper.py
 ```
 
-### Passo 3: Rode o arquivo main.py para acompanhar a implementação do projeto
+### Passo 4: Rode o arquivo main.py para acompanhar a implementação do projeto
 
 ```bash
 python3 main.py
