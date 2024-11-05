@@ -1,6 +1,6 @@
 # Recomendação de Livros
 
-## Overview
+## Visão Geral
 
 Este projeto envolve a criação de um sistema de recomendação de livros usando dados do [Project Gutenberg](https://www.gutenberg.org/). 
 
@@ -65,9 +65,9 @@ Os embeddings foram gerados utilizando uma rede neural de arquitetura Transforme
 
 O treinamento do modelo foi realizado usando a função de perda de entropia cruzada, que é adequada para problemas de classificação, como a análise de sentimentos. Essa função mede a diferença entre a distribuição de probabilidade das previsões do modelo e a distribuição real dos rótulos, penalizando previsões incorretas de forma mais severa quanto mais distantes elas estiverem da verdade. A entropia cruzada faz sentido para este problema, pois permite que o modelo aprenda a melhorar suas previsões ao longo do treinamento, minimizando a incerteza nas classificações.
 
-\[
+$$
 \text{Loss} = -\sum_{i=1}^{N} y_i \log(\hat{y}_i)
-\]
+$$
 
 ## Etapa 2
 
@@ -89,17 +89,17 @@ Na figura dos embeddings pré-treinados, pode-se observar que os dados estão di
 
 Os resultados dos testes realizados com o modelo são os seguintes:
 
-1. **Teste que produz 10 resultados**: "Science"
+1. **Teste que produz 10 resultados**: "Science"<br>
 O desempenho neste teste sugere que o modelo conseguiu encontrar textos relevantes que, embora possam não ter uma conexão direta com o termo "Science", já que a média de similaridade girou em torno de 0.35, ainda compartilham elementos que promovem uma similaridade contextual.
 
-2. **Teste que produz menos de 10 resultados**: "Stingy Jack"
+2. **Teste que produz menos de 10 resultados**: "Stingy Jack"<br>
 A análise deste teste mostrou que, apesar de uma quantidade limitada de resultados, a similaridade dos textos apresentados ainda se manteve elevada, de cerca de 0.55refletindo uma conexão temática ou contextual significativa. A ausência de menos de 10 resultados para "Stingy Jack" pode ser devido tanto a questões de classificação do código, quanto ambiguidade temática e falta de testes mais rigorosos.
 
-3. **Teste que produz algo não óbvio**: "Haphazard"
+3. **Teste que produz algo não óbvio**: "Haphazard"<br>
 Durante um teste específico, o modelo surpreendeu ao classificar a avaliação "The Abbot's Ghost, or Maurice Treherne's Temptation" como uma recomendação relevante com similaridade de 0.5914, apesar do título não conter uma relação direta com a palavra "Haphazard". Isso pode indicar uma interpretação mais profunda do contexto em que as palavras foram usadas.
 
 Os resultados indicam que o modelo está apresentando um desempenho variável, com precisão de similaridade que reflete a diversidade dos textos analisados. A capacidade de gerar recomendações relevantes, mesmo com dados que possam parecer pouco correlacionados, sugere que o modelo possui uma compreensão contextual que pode ser explorada e aprimorada em iterações futuras. Além disso, a classificação de textos com sentimentos não óbvios aponta para a necessidade de um ajuste e refinamento contínuos no treinamento e na arquitetura do modelo para maximizar a eficácia nas recomendações.
 
 ## Etapa 4
 
-Nesta etapa, focamos em aprimorar o sistema de recomendação desenvolvido. Escolheu-se explorar o caminho de Pesquisador usando uma frase de mockup.
+Nesta etapa, focamos em aprimorar o sistema de recomendação desenvolvido. Escolheu-se explorar o caminho de Pesquisador usando uma frase de mockup ("blablabla nonsensical").
